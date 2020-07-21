@@ -1,5 +1,4 @@
-import express, { Router } from 'express';
-import uploadConfig from '@config/upload';
+import { Router } from 'express';
 
 import appointmentsRouter from '@modules/appointments/infra/http/routes/appointmments.routes';
 import providersRouter from '@modules/appointments/infra/http/routes/providers.routes';
@@ -10,7 +9,6 @@ import profileRouter from '@modules/users/infra/http/routes/profile.routes';
 
 const routes = Router();
 
-routes.use('/files', express.static(uploadConfig.uploadsFolder));
 routes.use('/appointments', appointmentsRouter);
 routes.use('/providers', providersRouter);
 routes.use('/users', usersRouter);
